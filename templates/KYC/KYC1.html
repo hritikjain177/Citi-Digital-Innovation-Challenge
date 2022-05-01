@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Online KYC </title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static "css/kyc1.css"%}">
+<script src="{% static "js/kyc1.js"%}"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<Body>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3 border-0">
+                <h2 id="heading">Enter your credentials</h2>
+                <p>Fill all form field to go to next step</p>
+                <form id="msform" action ='KYC2' method='post'>
+                    {% csrf_token %}
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active" id="account"><strong>Account</strong></li>
+                        <li id="personal"><strong>Personal</strong></li>
+                        <li id="payment"><strong>Image</strong></li>
+                        <li id="confirm"><strong>Finish</strong></li>
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> <br> <!-- fieldsets -->
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Personal Information:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 4</h2>
+                                </div>
+                            </div> <label class="fieldlabels">Email: *</label> <input id="email" type="text" name="uemail" placeholder="Email Id" /> 
+                            <label class="fieldlabels">Full name ( as mentioned in aadhar ): *</label> <input type="text" id="uuname" name="uname" placeholder="First Name   Middle name   Last name" /> 
+                            <label class="fieldlabels">Mobile number (+91) *</label> <input type="text" name="pwd" placeholder="Phone number" />
+                            <input type="button" name="Resend"   class="next action-button" value="Resend" />
+                            <label class="fieldlabels">OTP: *</label> <input type="password" name="cpwd" placeholder="Enter 4 digit pin from latest msg on Phone" />
+                            </div>
+                             <input type="submit" name="next" class="next action-button" value="Next" /> 
+                            
+                    </fieldset>
+                  
+              
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</Body>
+</html>
+
+
+
+
