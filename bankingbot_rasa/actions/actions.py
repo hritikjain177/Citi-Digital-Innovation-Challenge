@@ -152,7 +152,7 @@ class ActionShowBalance(Action):
         url = "http://127.0.0.1:8000/api/user-profile"
         x = requests.post(url, data=data, headers=headers)
         #profile = json.loads(x.json())['profile']
-        dispatcher.utter_message(text=f"You currently have Rs. 150000000 in your account")
+        dispatcher.utter_message(text=f"You currently have 24,30,200 in your account")
         return []
 
 
